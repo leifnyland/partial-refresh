@@ -30,6 +30,7 @@
 ******************************************************************************/
 #include "EPD_Test.h"
 #include "EPD_4in2_V2.h"
+#include "ImageData.h"
 #include <string.h>
 
 int EPD_4in2_V2_test(void)
@@ -55,21 +56,21 @@ int EPD_4in2_V2_test(void)
     printf("Paint_NewImage\r\n");
     Paint_NewImage(BlackImage, EPD_4IN2_V2_WIDTH, EPD_4IN2_V2_HEIGHT, 0, WHITE);
 
-#if 1  // show bmp
-    printf("show window BMP-----------------\r\n");
-    Paint_SelectImage(BlackImage);
-    Paint_Clear(WHITE);
-    GUI_ReadBmp("./pic/100x100.bmp", 10, 10);
-    EPD_4IN2_V2_Display(BlackImage);
-    DEV_Delay_ms(2000);
+// #if 1  // show bmp
+//     printf("show window BMP-----------------\r\n");
+//     Paint_SelectImage(BlackImage);
+//     Paint_Clear(WHITE);
+//     GUI_ReadBmp("./pic/100x100.bmp", 10, 10);
+//     EPD_4IN2_V2_Display(BlackImage);
+//     DEV_Delay_ms(2000);
 
-    // EPD_4IN2_V2_Init_Fast(Seconds_1_5S);
-    // printf("show bmp------------------------\r\n");
-    // Paint_SelectImage(BlackImage);
-    // GUI_ReadBmp("./pic/4in2.bmp", 0, 0);
-    // EPD_4IN2_V2_Display_Fast(BlackImage);
-    // DEV_Delay_ms(2000);
-#endif        
+//     // EPD_4IN2_V2_Init_Fast(Seconds_1_5S);
+//     // printf("show bmp------------------------\r\n");
+//     // Paint_SelectImage(BlackImage);
+//     // GUI_ReadBmp("./pic/4in2.bmp", 0, 0);
+//     // EPD_4IN2_V2_Display_Fast(BlackImage);
+//     // DEV_Delay_ms(2000);
+// #endif        
 
 #if 1  // show image for array   
     EPD_4IN2_V2_Init_Fast(Seconds_1_5S);
@@ -106,8 +107,8 @@ int EPD_4in2_V2_test(void)
     Paint_DrawString_EN(10, 20, "hello world", &Font12, WHITE, BLACK);
     Paint_DrawNum(10, 33, 123456789, &Font12, BLACK, WHITE);
     Paint_DrawNum(10, 50, 987654321, &Font16, WHITE, BLACK);
-    Paint_DrawString_CN(130, 0, "ÄãºÃabc", &Font12CN, BLACK, WHITE);
-    Paint_DrawString_CN(130, 20, "Î¢Ñ©µç×Ó", &Font24CN, WHITE, BLACK);
+    Paint_DrawString_CN(130, 0, "ï¿½ï¿½ï¿½abc", &Font12CN, BLACK, WHITE);
+    Paint_DrawString_CN(130, 20, "Î¢Ñ©ï¿½ï¿½ï¿½ï¿½", &Font24CN, WHITE, BLACK);
 
     printf("EPD_Display\r\n");
     // EPD_4IN2_V2_Display(BlackImage);
@@ -181,15 +182,15 @@ int EPD_4in2_V2_test(void)
     Paint_DrawString_EN(10, 20, "hello world", &Font12, WHITE, BLACK);
     Paint_DrawNum(10, 33, 123456789, &Font12, BLACK, WHITE);
     Paint_DrawNum(10, 50, 987654321, &Font16, WHITE, BLACK);
-    Paint_DrawString_CN(140, 0, "ÄãºÃabc", &Font12CN, GRAY1, GRAY4);
-    Paint_DrawString_CN(140, 40, "ÄãºÃabc", &Font12CN, GRAY2, GRAY3);
-    Paint_DrawString_CN(140, 80, "ÄãºÃabc", &Font12CN, GRAY3, GRAY2);
-    Paint_DrawString_CN(140, 120, "ÄãºÃabc", &Font12CN, GRAY4, GRAY1);
+    Paint_DrawString_CN(140, 0, "ï¿½ï¿½ï¿½abc", &Font12CN, GRAY1, GRAY4);
+    Paint_DrawString_CN(140, 40, "ï¿½ï¿½ï¿½abc", &Font12CN, GRAY2, GRAY3);
+    Paint_DrawString_CN(140, 80, "ï¿½ï¿½ï¿½abc", &Font12CN, GRAY3, GRAY2);
+    Paint_DrawString_CN(140, 120, "ï¿½ï¿½ï¿½abc", &Font12CN, GRAY4, GRAY1);
 	
-    Paint_DrawString_CN(220, 0, "Î¢Ñ©µç×Ó", &Font24CN, GRAY1, GRAY4);
-    Paint_DrawString_CN(220, 40, "Î¢Ñ©µç×Ó", &Font24CN, GRAY2, GRAY3);
-    Paint_DrawString_CN(220, 80, "Î¢Ñ©µç×Ó", &Font24CN, GRAY3, GRAY2);
-    Paint_DrawString_CN(220, 120, "Î¢Ñ©µç×Ó", &Font24CN, GRAY4, GRAY1);
+    Paint_DrawString_CN(220, 0, "Î¢Ñ©ï¿½ï¿½ï¿½ï¿½", &Font24CN, GRAY1, GRAY4);
+    Paint_DrawString_CN(220, 40, "Î¢Ñ©ï¿½ï¿½ï¿½ï¿½", &Font24CN, GRAY2, GRAY3);
+    Paint_DrawString_CN(220, 80, "Î¢Ñ©ï¿½ï¿½ï¿½ï¿½", &Font24CN, GRAY3, GRAY2);
+    Paint_DrawString_CN(220, 120, "Î¢Ñ©ï¿½ï¿½ï¿½ï¿½", &Font24CN, GRAY4, GRAY1);
 	
 	EPD_4IN2_V2_Display_4Gray(BlackImage);
 	DEV_Delay_ms(2000);
