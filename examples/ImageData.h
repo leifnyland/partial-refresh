@@ -34,7 +34,9 @@
 
 /* ------------------------------------------------ */
 // Imagedata
-extern const unsigned char Image4color[];
+extern const unsigned char gImage_4in2[];
+extern const unsigned char gImage_4in2_4Gray[];
+extern const unsigned char gImage_4in2_4Gray1[];
 
 #endif
 /* FILE END */

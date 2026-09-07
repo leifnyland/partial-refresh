@@ -99,4 +99,3 @@ JETSON_DEV:
 clean :
 	rm $(DIR_BIN)/*.* 
 	rm $(TARGET) 
-
