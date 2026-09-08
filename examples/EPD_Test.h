@@ -39,4 +39,6 @@
 
 int EPD_4in2_V2_test(void);
 int EPD_4in2_V2_hello_world(void);
+int EPD_4in2_V2_partial_refresh(void);
+
 #endif
